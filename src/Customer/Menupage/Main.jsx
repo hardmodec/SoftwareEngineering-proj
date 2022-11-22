@@ -13,7 +13,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Colortheme1 from '../../Component/Colortheme1';
 import { purple } from '@mui/material/colors';
 import ControlledOpenSelect from '../../Component/Select';
-import { useStateValue } from "../StateProvider";
+import { useStateValue } from "../../StateProvider";
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -29,16 +29,16 @@ export function CustomizedButtons() {
   const [{ cart }, dispatch] = useStateValue();
   const addToCart = () => {
     // dispatch the item into the data layer
-    dispatch({
-      type: "ADD_TO_CART",
-      item: {
-        id: id,
-        title: title,
-        image: image,
-        price: price,
-        rating: rating,
-      },
-    });
+    // dispatch({
+    //   type: "ADD_TO_CART",
+    //   item: {
+    //     id: id,
+    //     title: title,
+    //     image: image,
+    //     price: price,
+    //     rating: rating,
+    //   },
+    // });
   };
   return (
     <ColorButton variant="contained">장바구니에 추가</ColorButton>

@@ -1,11 +1,16 @@
 //마이페이지
-import { Box } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from '../../Component/Header';
+import  Box  from '@mui/material/Box';
+
+import * as React from 'react';
 
 
 function Accountpage(){
-    <Box></Box>
+    return(
+    <Box />
+
+    )
 }
 
 export default Accountpage
+
+// --openssl-legacy-provider start

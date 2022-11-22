@@ -1,5 +1,4 @@
 import React from "react";
-import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../../StateProvider";
 import { getCartTotal } from "../../reducer";
 import "./SubTotals.css";   
@@ -11,11 +10,11 @@ const Subtotal = () => {
 
   return (
     <div className="subtotal">
-      <CurrencyFormat
+      <div>
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({cart?.length} items) :<strong>{value}</strong>
+              Subtotal ({cart.length} items) :<strong>{value}</strong>
             </p>
             <small className="subtotal__gift">
               <input type="checkbox" />
@@ -28,7 +27,7 @@ const Subtotal = () => {
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
-      />
+      </div>
       <button onClick={(e) => navigate("/payment")}>Proceed to Checkout</button>
     </div>
   );

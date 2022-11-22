@@ -32,80 +32,80 @@ function App() {
   const header = (userStatus === "Admin") ? <Header></Header> : <StaffHeader></StaffHeader>;
 
   return (
-    // <Container>
-    //   <Router>
-    //     <Header></Header>       
-    //     <Routes>
-    //         <Route path="" element={<Navigate replace to="home" />} />
-          
-    //         {/* home */}
-    //         <Route path="home" element={<Homepage />} />
-    //         {/* customer */}
-    //         <Route path="information" element={<Informationpage />} />
-    //         <Route path="account" element={<Accountpage />} />
-    //         <Route path="login">
-    //           <Route path="" element={<Loginpage />} />
-    //           <Route path="signup" element={<Signuppage />} />
-    //         </Route>
-    //         <Route path="menu" element={<Menupage />} />
-    //         <Route path="checkout" element={<Checkout />} />
-    //         {/* staff */}
-    //         <Route path="staff/customerlist" element={<CustomerList />} />
-    //         <Route path="entireorder" element={<EntireOrder />} />
-    //         <Route path="inventory" element={<Inventory />}/>
-    //         <Route path="noworder" element={<NowOrder />} />
-    //         <Route path="viplist" element={<VipList />} />
-            
-    //     </Routes>
-    //   </Router>
-    // </Container>
-    <Router>
-      <div className="app">
+    <Container>
+      <Router>
+        <Header></Header>       
         <Routes>
-          <Route path="/login" element={<Loginpage />} />
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <Header />
-                <Home />
-              </>
-            }
-          />
-          <Route
-            path="/checkout"
-            element={
-              <>
-                <Header />
-                <Checkout />
-              </>
-            }
-          />
-          {/* <Route
-            path="/payment"
-            element={
-              <>
-                <Header />
-                <Elements stripe={promise}>
-                  <Payment />
-                </Elements>
-              </>
-            }
-          /> */}
-          <Route
-            path="/orders"
-            element={
-              <>
-                <Header />
-                <Orders />
-              </>
-            }
-          />
+            <Route path="" element={<Navigate replace to="home" />} />
+          
+            {/* home */}
+            <Route path="home" element={<Homepage />} />
+            {/* customer */}
+            <Route path="information" element={<Informationpage />} />
+            <Route path="account" element={<Accountpage />} />
+            <Route path="login">
+              <Route path="" element={<Loginpage />} />
+              <Route path="signup" element={<Signuppage />} />
+            </Route>
+            <Route path="menu" element={<Menupage />} />
+            <Route path="checkout" element={<Checkout />} />
+            {/* staff */}
+            <Route path="staff/customerlist" element={<CustomerList />} />
+            <Route path="entireorder" element={<EntireOrder />} />
+            <Route path="inventory" element={<Inventory />}/>
+            <Route path="noworder" element={<NowOrder />} />
+            <Route path="viplist" element={<VipList />} />
+            
         </Routes>
-      </div>
-    </Router>
-  );
+      </Router>
+    </Container>
+  //   <Router>
+  //     <div className="app">
+  //       <Routes>
+  //         <Route path="/login" element={<Loginpage />} />
+  //         <Route
+  //           exact
+  //           path="/"
+  //           element={
+  //             <>
+  //               <Header />
+  //               <Home />
+  //             </>
+  //           }
+  //         />
+  //         <Route
+  //           path="/checkout"
+  //           element={
+  //             <>
+  //               <Header />
+  //               <Checkout />
+  //             </>
+  //           }
+  //         />
+  //         {/* <Route
+  //           path="/payment"
+  //           element={
+  //             <>
+  //               <Header />
+  //               <Elements stripe={promise}>
+  //                 <Payment />
+  //               </Elements>
+  //             </>
+  //           }
+  //         /> */}
+  //         <Route
+  //           path="/orders"
+  //           element={
+  //             <>
+  //               <Header />
+  //               <Orders />
+  //             </>
+  //           }
+  //         />
+  //       </Routes>
+  //     </div>
+  //   </Router>
+   );
 };
 
 
