@@ -5,12 +5,9 @@ import * as React from 'react';
 
 function Informationpage(){
     return(
-    <Box> 
-        <Router>
-        <Header></Header>
-        </Router>
-    </Box>
-    )
+    
+    <Box/>
+    );
 }
 
 export default Informationpage

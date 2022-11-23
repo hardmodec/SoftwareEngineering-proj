@@ -9,7 +9,7 @@ import CenteredTabs from './Component/CenteredTabs'
 import Header from './Component/Header'
 import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
 import Informationpage from './Customer/Informationpage/Informationpage';
-import ShoppingBagpage from './Customer/ShoppingBagpage/ShoppingBagpage';
+import ShoppingBagPage from './Customer/ShoppingBagpage/ShoppingBagpage';
 import Footer from './Component/Footer';
 import {Container} from '@mui/material'
 import Stack from '@mui/material/Stack';
@@ -22,9 +22,6 @@ import Inventory from './Staff/Inventory'
 import VipList from './Staff/VipList'
 import NowOrder from './Staff/NowOrder'
 import StaffHeader from './Component/StaffHeader';
-import Checkout from './Customer/ShoppingBagpage/Checkout';
-import Orders from './Customer/ShoppingBagpage/Orders'
-import Home from './Customer/ShoppingBagpage/Home'
 
 function App() {
   const userStatus = "Admin"
@@ -48,7 +45,7 @@ function App() {
               <Route path="signup" element={<Signuppage />} />
             </Route>
             <Route path="menu" element={<Menupage />} />
-            <Route path="checkout" element={<Checkout />} />
+            <Route path="shoppingbag" element={<ShoppingBagPage />} />
             {/* staff */}
             <Route path="staff/customerlist" element={<CustomerList />} />
             <Route path="entireorder" element={<EntireOrder />} />

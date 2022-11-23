@@ -3,8 +3,171 @@
 // import  Box  from '@mui/material/Box';
 // import prototypes from '@mui/material/'
 // import useCallback from '@mui/material/'
-// import useState from 
+// import useState
+import * as React from 'react';
+import  Box  from '@mui/material/Box';
+import { useState, useEffect } from 'react';
+import {item} from '../../Component/item';
+//import menustyle from '../../Component/item';
 
+function ShoppingBagPage(){
+    
+    const menuList = item.map((menu, index) => (<li key={index}>{menu}</li>));
+
+    return(
+    <Box>
+    <div>help</div>
+    <ul>{menuList}</ul>
+    </Box>
+    );
+}
+
+
+export default ShoppingBagPage;
+
+
+
+// const DUMMY_ITEM_LIST = [
+//     {
+//       id: 1,
+//       name: '영귤섬 아이스티',
+//       packingState: '포장불가',
+//       price: 13000,
+//       amount: 1,
+//       isChecked: true,
+//     },
+//     {
+//       id: 2,
+//       name: '러블리 티 박스',
+//       packingState: '포장가능',
+//       price: 20000,
+//       amount: 1,
+//       isChecked: true,
+//     },
+//     {
+//       id: 3,
+//       name: '그린티 랑드샤 세트',
+//       packingState: '포장불가',
+//       price: 36000,
+//       amount: 1,
+//       isChecked: true,
+//     },
+//   ];
+
+//   <ul>
+//   {itemList.map(item => {
+//     return (
+//       <CartItem key={item.id} item={item} onChangeProps={onChangeProps} />
+//     );
+//   })}
+// </ul>
+
+// const amountInputHandler = event => {
+//     onChangeProps(item.id, 'amount', +event.target.value);
+//   };
+
+//   const amountIncreaseHandler = event => {
+//     event.preventDefault();
+//     onChangeProps(item.id, 'amount', item.amount + 1);
+//   };
+
+//   const amountDecreaseHandler = event => {
+//     event.preventDefault();
+//     onChangeProps(item.id, 'amount', item.amount - 1);
+//   };
+
+//   useEffect(() => {
+//     setIsBtnValid(item.amount > 1);
+//   }, [item.amount]);
+
+//   const onChangeProps = (id, key, value) => {
+//     setItemList(prevState => {
+//       return prevState.map(obj => {
+//         if (obj.id === id) {
+//           return { ...obj, [key]: value };
+//         } else {
+//           return { ...obj };
+//         }
+//       });
+//     });
+//   };
+
+//   const totalCheckboxHandler = value => {
+//     setItemList(prevState => {
+//       return prevState.map(obj => {
+//         return { ...obj, isChecked: value };
+//       });
+//     });
+//     setTotalCheckboxisChecked(value);
+//   };
+
+
+
+//   import { useState, useEffect } from 'react';
+// import ItemPrice from './ItemPrice';
+// import './SideBar.scss';
+
+// const SideBar = props => {
+//   const { totalPrice } = props;
+
+//   const [deliveryCost, setDeliveryCost] = useState(0);
+
+//   useEffect(() => {
+//     setDeliveryCost(totalPrice < 30000 ? (totalPrice ? 3000 : 0) : 0);
+//   }, [totalPrice]);
+
+//   const PRICE_CATEGORY_LIST = [
+//     {
+//       id: 1,
+//       title: '상품 금액',
+//       price: `+${totalPrice.toLocaleString('en')}`,
+//     },
+//     {
+//       id: 2,
+//       title: '상품 할인',
+//       price: '-0',
+//     },
+//     {
+//       id: 3,
+//       title: '포장비',
+//       price: '+0',
+//     },
+//     {
+//       id: 4,
+//       title: '부가 쇼핑백',
+//       price: '+0',
+//     },
+//     {
+//       id: 5,
+//       title: '배송비',
+//       price: `+${deliveryCost.toLocaleString('en')}`,
+//     },
+//   ];
+
+//   return (
+//     <section className="sidebar">
+//       <div className="totalAmountOfPrice">
+//         <ul>
+//           {PRICE_CATEGORY_LIST.map(ele => (
+//             <ItemPrice key={ele.id} title={ele.title} price={ele.price} />
+//           ))}
+//         </ul>
+//         <div className="expectedPrice">
+//           <p>결제 예상 금액</p>
+//           <p>
+//             <span>{(totalPrice + deliveryCost).toLocaleString('en')}</span>
+//             <span>원</span>
+//           </p>
+//         </div>
+//         <button>{`${(totalPrice + deliveryCost).toLocaleString(
+//           'en'
+//         )}원 주문하기`}</button>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export SideBar;
 // <div>
 //     {prototypes.map((prototype) => {
 //     	const { id, thumbnail, title, price, desc, picUrl } = prototype;

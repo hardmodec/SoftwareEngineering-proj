@@ -1,0 +1,88 @@
+.email{
+    border-radius: 20px / 20px;
+ margin: 60px;
+ padding: 20px;
+ width: 500px;
+ height: 100px;
+ border: 1px solid purple;
+ background-color:  rgb(255, 241, 251);
+ box-shadow: 0px 0px 10px 1px purple;
+ text-align: center;
+ line-height: 100px;
+ font-family:"naver1";
+ font-size: 30px;
+ position: relative;
+ left: 250px;
+}
+.password{
+    border-radius: 20px / 20px;
+ margin: 60px;
+ padding: 20px;
+ width: 500px;
+ height: 100px;
+ border: 1px solid purple;
+ background-color:  rgb(255, 241, 251);
+ box-shadow: 0px 0px 10px 1px purple;
+ text-align: center;
+ line-height: 100px;
+ font-family:"naver1";
+ font-size: 30px;
+ position: relative;
+ left: 250px;
+}
+.name{
+    border-radius: 20px / 20px;
+ border-top: 40px;
+ margin: 60px;
+ padding: 20px;
+ width: 500px;
+ height: 100px;
+ border: 1px solid purple;
+ background-color: rgb(255, 241, 251);
+ box-shadow: 0px 0px 10px 1px purple;
+ text-align: center;
+ line-height: 100px;
+ font-family:"naver1";
+ font-size: 30px;
+ position: relative;
+ left: 250px;
+}
+
+.address{
+    border-radius: 20px / 20px;
+ margin: 60px;
+ padding: 20px;
+ width: 500px;
+ height: 100px;
+ border: 1px solid purple;
+ background-color:  rgb(255, 241, 251);
+ box-shadow: 0px 0px 10px 1px purple;
+ text-align: center;
+ line-height: 100px;
+ font-family:"naver1";
+ font-size: 30px;
+ position: relative;
+ left: 250px;
+}
+
+.phone_number{
+    border-radius: 20px / 20px;
+ margin: 60px;
+ padding: 20px;
+ width: 500px;
+ height: 100px;
+ border: 1px solid purple;
+ background-color:  rgb(255, 241, 251);
+ box-shadow: 0px 0px 10px 1px purple;
+ text-align: center;
+ line-height: 100px;
+ font-family:"naver1";
+ font-size: 30px;
+ position: relative;
+ left: 250px;
+}
+
+@font-face{
+    font-family:"naver1";
+    src: url("../../font/NaverNanumSquareNeo/TTF/NanumSquareNeo-cBd.ttf")
+}

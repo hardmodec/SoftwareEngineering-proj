@@ -45,7 +45,6 @@ function Homepage() {
   const navigate = useNavigate();
   return (
     <Container>
-      <Box align="center" sx={{ p: 3, border: '2px dashed grey' }} ><h1>Mr. Fortune</h1></Box>
     <Container Fixed>
     <Box sx={{ flexGrow: 1, margin: 5}} >
       

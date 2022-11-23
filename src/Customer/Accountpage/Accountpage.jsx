@@ -2,13 +2,18 @@
 import  Box  from '@mui/material/Box';
 
 import * as React from 'react';
-
+import "./Accountpage.css";
 
 function Accountpage(){
     return(
-    <Box />
-
-    )
+        <>
+    <div className="name">name:</div>
+    <div className="email">email:</div>
+    <div className="password">password:</div>
+    <div className="address">address:</div>
+    <div className="phone_number">phone_number:</div>
+        </>
+    );
 }
 
 export default Accountpage

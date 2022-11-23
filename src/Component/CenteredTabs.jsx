@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Colortheme1 from '../Component/Colortheme1'
 import { useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-
+import "./CenteredTabs.css"
 
 
 function CenteredTabs() {
@@ -23,11 +23,11 @@ function CenteredTabs() {
     };
     // const [{ cart, user }, dispatch] = useStateValue();
     return (
-      <Box sx={{ width: '100%', bgcolor:"primary"}}>
+      
+      <Box sx={{ width: '100%'}}>
         <ThemeProvider theme={Colortheme1}>
         {/* <Box sx={{ bgcolor: 'error' }}> */}
-
-        <Tabs value={value} onChange={handleChange} centered indicatorColor="secondary" textColor="secondary" aria-label="secondary tabs example" bgColor="primary">
+        <Tabs value={value} onChange={handleChange} centered indicatorColor="secondary" textColor="secondary" aria-label="secondary tabs example" >
        
           <Tab
             icon={<HomeIcon />} onClick={() => navigate("home")}
@@ -44,23 +44,15 @@ function CenteredTabs() {
             sx={{ mt: 5, mr: 3, ml: 5 }}
           />
           <Tab
-            // <Link to="/checkout">
-            //   <div className="header__optionCart">
-            //     <ShoppingCartIcon />
-            //     <span className="header__optionLineTwo header__cartCount">
-            //       {cart?.length}
-            //     </span>
-            //   </div>
-            // </Link>
-            icon={<div className="header__optionCart"><ShoppingCartIcon />
-                {/* <span className="header__optionLineTwo header__cartCount">
-                  {cart?.length}
-                </span> */}
-                </div>} onClick={() => navigate("/checkout")}
+          
+            icon={<ShoppingCartIcon />}
+            onClick={() => navigate("/shoppingbag")}
             label="장바구니"
             sx={{ mt: 5, mr: 3, ml: 5 }}
           />
         </Tabs>
+        
+
         {/* </Box> */}
         </ThemeProvider>
       </Box>

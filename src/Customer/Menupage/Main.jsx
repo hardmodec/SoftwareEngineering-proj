@@ -13,8 +13,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Colortheme1 from '../../Component/Colortheme1';
 import { purple } from '@mui/material/colors';
 import ControlledOpenSelect from '../../Component/Select';
-import { useStateValue } from "../../StateProvider";
-
+import {item, menustyle} from "../../Component/item"
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
@@ -26,20 +25,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export function CustomizedButtons() {
-  const [{ cart }, dispatch] = useStateValue();
-  const addToCart = () => {
-    // dispatch the item into the data layer
-    // dispatch({
-    //   type: "ADD_TO_CART",
-    //   item: {
-    //     id: id,
-    //     title: title,
-    //     image: image,
-    //     price: price,
-    //     rating: rating,
-    //   },
-    // });
-  };
+
   return (
     <ColorButton variant="contained">장바구니에 추가</ColorButton>
   );
@@ -56,6 +42,7 @@ const Item = styled(Paper)(({ theme }) => ({
   
   
 }));
+
 
 function BasicGrid() {
   return (
@@ -79,12 +66,10 @@ function BasicGrid() {
               justifyContent="center"
               alignItems="justify-end"
             >
-
               <CustomizedButtons >
               </CustomizedButtons>  
             </Box>
           </Item>
-          
         </Grid>
 
         <Grid item xs={6}>
@@ -105,7 +90,6 @@ function BasicGrid() {
         </Grid>
 
         <Grid item xs={6}>
-        
           <Item>
             <h3>잉글리시 디너(English dinner)</h3>
                 <ul>
@@ -120,14 +104,12 @@ function BasicGrid() {
             <CustomizedButtons>
             </CustomizedButtons> 
           </Item>
-          
-        
         </Grid>
 
         <Grid item xs={6}>
         <ButtonBase > 
           <Item>
-            <h3>샴페인 축제 디너(French dinner)</h3>
+            <h3>샴페인 축제 디너(Champagne Feast dinner)</h3>
                 <ul>
                   <li>샴페인 1병</li>
                   <li>바게트빵 4조각</li>
@@ -152,7 +134,7 @@ function BasicGrid() {
     </Box>
     <Grid item xs={12} >
           <Item>xs=8</Item>
-        </Grid>
+      </Grid>
     </Container>
     </Container>
   );
