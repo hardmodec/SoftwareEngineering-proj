@@ -18,15 +18,15 @@ import {useState} from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
+import CartContext from '../../Context/CartContext';
 
 
 function Detailmenu({menuid}) {
+
+    const Cart = React.useContext(CartContext);
+    const {menuCart, AddMenu} = Cart
+    
     const [menucart, setMenucart1] = useState([])
-
-
-    const Addmenu = (id, amount) => {
-        setMenucart1(...menucart,{menuid: id, amount: amount})
-    }
     
   return (
     <Box sx={{ minWidth: 120 }}>

@@ -22,6 +22,7 @@ import Inventory from './Staff/Inventory'
 import VipList from './Staff/VipList'
 import NowOrder from './Staff/NowOrder'
 import StaffHeader from './Component/StaffHeader';
+import { CartProvider } from './Context/CartContext';
 
 function App() {
   const userStatus = "Admin"
@@ -29,7 +30,7 @@ function App() {
   const header = (userStatus === "Admin") ? <Header></Header> : <StaffHeader></StaffHeader>;
 
   return (
-    <>
+    <CartProvider>
       <Router>
         <Header></Header>       
         <Routes>
@@ -55,7 +56,7 @@ function App() {
             
         </Routes>
       </Router>
-      </>
+      </CartProvider>
       
       
   //   <Router>
