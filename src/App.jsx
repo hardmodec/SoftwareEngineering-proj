@@ -29,7 +29,7 @@ function App() {
   const header = (userStatus === "Admin") ? <Header></Header> : <StaffHeader></StaffHeader>;
 
   return (
-    <Container>
+    <>
       <Router>
         <Header></Header>       
         <Routes>
@@ -55,7 +55,9 @@ function App() {
             
         </Routes>
       </Router>
-    </Container>
+      </>
+      
+      
   //   <Router>
   //     <div className="app">
   //       <Routes>

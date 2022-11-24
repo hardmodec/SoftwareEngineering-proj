@@ -27,8 +27,8 @@ function CenteredTabs() {
       <Box sx={{ width: '100%'}}>
         <ThemeProvider theme={Colortheme1}>
         {/* <Box sx={{ bgcolor: 'error' }}> */}
-        <Tabs value={value} onChange={handleChange} centered indicatorColor="secondary" textColor="secondary" aria-label="secondary tabs example" >
-       
+        <div className="tabheader">
+        <Tabs value={value} onChange={handleChange} centered indicatorColor="secondary" textColor="secondary" aria-label="tabheader" >
           <Tab
             icon={<HomeIcon />} onClick={() => navigate("home")}
             label="HOME"
@@ -37,13 +37,13 @@ function CenteredTabs() {
         
           <Tab onClick={() => navigate("/information")} icon={<ImportContactsRoundedIcon />} label="소개" sx={{ mt: 5, mr: 3, ml: 5 }} />
           <Tab onClick={() => navigate("/menu")} icon={<RestaurantMenuIcon  />} label="메뉴 및 주문" sx={{ mt: 5, mr: 3, ml: 5 }}/>
-          <Tab onClick={() => navigate("/login")} icon={<LoginRoundedIcon />} label="로그인" sx={{ mt: 5, mr: 3, ml: 5 }}/>
+          <Tab onClick={() => navigate("/login")} icon={<LoginRoundedIcon />}     font-family="naver1" label="로그인" sx={{ mt: 5, mr: 3, ml: 5 }}/>
           <Tab
             icon={<SettingsAccessibilityIcon />} onClick={() => navigate("/account")}
             label="마이페이지"
             sx={{ mt: 5, mr: 3, ml: 5 }}
           />
-          <Tab
+          <Tab 
           
             icon={<ShoppingCartIcon />}
             onClick={() => navigate("/shoppingbag")}
@@ -51,8 +51,8 @@ function CenteredTabs() {
             sx={{ mt: 5, mr: 3, ml: 5 }}
           />
         </Tabs>
-        
-
+         
+        </div>
         {/* </Box> */}
         </ThemeProvider>
       </Box>

@@ -13,7 +13,133 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Colortheme1 from '../../Component/Colortheme1';
 import { purple } from '@mui/material/colors';
 import ControlledOpenSelect from '../../Component/Select';
-import {item, menustyle} from "../../Component/item"
+import {dinner, menustyle, basicmenu} from "../../Component/item"
+import {useState} from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import NativeSelect from '@mui/material/NativeSelect';
+
+
+function Detailmenu({menuid}) {
+    const [menucart, setMenucart1] = useState([])
+
+
+    const Addmenu = (id, amount) => {
+        setMenucart1(...menucart,{menuid: id, amount: amount})
+    }
+    
+  return (
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+          Amount
+        </InputLabel>
+        <NativeSelect
+          defaultValue={1}
+          inputProps={{
+            name: 'amount',
+            id: menuid,
+          }}
+        >
+          <option onClick={{} = () => {Addmenu(menuid, 0)}} id={menuid} value={0}>0</option>
+          <option onClick={{Addmenu}} id={menuid} value={1}>1</option>
+          <option onClick={{Addmenu}} id={menuid} value={2}>2</option>
+          <option onClick={{Addmenu}} id={menuid} value={3}>3</option>
+          <option onClick={{Addmenu}} id={menuid} value={4}>4</option>
+          <option onClick={{Addmenu}} id={menuid} value={5}>5</option>
+
+        </NativeSelect>
+      </FormControl>
+    </Box>
+  );
+}
+
+
+
+function BasicGrid() {
+  const [ordercart, setOrdercart] = useState()
+  return (
+    <Container>
+    <Container Fixed>
+    <Box sx={{ flexGrow: 1, margin: 5}} >
+      <Grid container rowSpacing={8} columnSpacing={9}>
+        <Grid item xs={6}>
+          <Item>
+            <h3>발렌타인 디너(Valentine dinner)</h3>
+            <ul>
+              <li>와인 1잔 <Detailmenu menuid={2}/> </li>
+              <li>스테이크 <Detailmenu menuid={1}/> </li>
+            </ul>
+            <ControlledOpenSelect></ControlledOpenSelect>
+
+            <h3>기본가격: ₩ 4.5 / ₩ 4.7 / ₩ 5.0</h3>
+            
+              <CustomizedButtons >
+              </CustomizedButtons>  
+          </Item>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Item>
+            <h3>프렌치 디너(French dinner)</h3>
+              <ul>
+                <li>커피 1잔 <Detailmenu menuid={3}/> </li>
+                <li>와인 1잔 <Detailmenu menuid={2}/> </li>
+                <li>샐러드   <Detailmenu menuid={5}/> </li>
+                <li>스테이크 <Detailmenu menuid={1}/> </li>
+              </ul>
+              <ControlledOpenSelect></ControlledOpenSelect>
+
+            <h3>기본가격: ₩ {dinner[1].price} / ₩ 5.8 / ₩ 6.1</h3>
+          <CustomizedButtons>
+          </CustomizedButtons> 
+          </Item>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Item>
+            <h3>잉글리시 디너(English dinner)</h3>
+                <ul>
+                  <li>에그 스크램블 <Detailmenu menuid={6}/> </li>
+                  <li>베이컨       <Detailmenu menuid={7}/> </li>
+                  <li>빵           <Detailmenu menuid={8}/> </li>
+                  <li>스테이크     <Detailmenu menuid={1}/> </li>
+                </ul>
+                <ControlledOpenSelect></ControlledOpenSelect>
+
+            <h3>기본가격: ₩ {dinner.잉글리시디너.price} / ₩ 5.0 / ₩ 5.3</h3>
+            <CustomizedButtons>
+            </CustomizedButtons> 
+          </Item>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Item>
+            <h3>샴페인 축제 디너(Champagne Feast dinner)</h3>
+                <ul>
+                  <li>샴페인 1병      <Detailmenu menuid={4}/> </li>
+                  <li>바게트빵 4조각  <Detailmenu menuid={9}/></li>
+                  <li>커피 1포트     <Detailmenu menuid={3}/> </li>
+                  <li>와인 1잔       <Detailmenu menuid={2}/> </li>
+                  <li>스테이크       <Detailmenu menuid={1}/> </li>
+                </ul>
+                <ControlledOpenSelect></ControlledOpenSelect>
+            <h3>₩ {dinner.샴페인축제디너.price} / ₩ 13.8 / ₩ 14.1</h3>
+            <h3>* 2인 식사 기준 *</h3>
+            
+            <CustomizedButtons>
+            </CustomizedButtons> 
+          </Item>
+        </Grid>
+      </Grid>
+    </Box>
+    <Grid item xs={12} >
+          <Item>xs=8</Item>
+      </Grid>
+    </Container>
+    </Container>
+  );
+}
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
@@ -24,10 +150,12 @@ const ColorButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-export function CustomizedButtons() {
 
+export function CustomizedButtons() {
+  const [ordercart, setOrdercart] = useState([])
+  setOrdercart([...ordercart, menucart])
   return (
-    <ColorButton variant="contained">장바구니에 추가</ColorButton>
+    <ColorButton variant="contained" onClick={{}}>장바구니에 추가</ColorButton>
   );
 }
 
@@ -39,208 +167,152 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
   height: 440,
   width: 460,
-  
-  
 }));
 
+export default BasicGrid;
 
-function BasicGrid() {
-  return (
-    <Container>
-    <Container Fixed>
-    <Box sx={{ flexGrow: 1, margin: 5}} >
-      <Grid container rowSpacing={8} columnSpacing={9}>
-        <Grid item xs={6}>
-          <Item>
-            <h3>발렌타인 디너(Valentine dinner)</h3>
-            <ul>
-              <li>와인 1잔</li>
-              <li>스테이크</li>
-            </ul>
-            <ControlledOpenSelect></ControlledOpenSelect>
+// const DUMMY_ITEM_LIST = [
+//   {
+//     id: 1,
+//     name: '영귤섬 아이스티',
+//     packingState: '포장불가',
+//     price: 13000,
+//     amount: 1,
+//     isChecked: true,
+//   },
+//   {
+//     id: 2,
+//     name: '러블리 티 박스',
+//     packingState: '포장가능',
+//     price: 20000,
+//     amount: 1,
+//     isChecked: true,
+//   },
+//   {
+//     id: 3,
+//     name: '그린티 랑드샤 세트',
+//     packingState: '포장불가',
+//     price: 36000,
+//     amount: 1,
+//     isChecked: true,
+//   },
+// ];
 
-            <h3>₩ 5.0 / ₩ 6.0 / ₩ 7.0</h3>
-            <Box
-              m={1}
-              display="flex"
-              justifyContent="center"
-              alignItems="justify-end"
-            >
-              <CustomizedButtons >
-              </CustomizedButtons>  
-            </Box>
-          </Item>
-        </Grid>
+// <ul>
+// {itemList.map(item => {
+//   return (
+//     <CartItem key={item.id} item={item} onChangeProps={onChangeProps} />
+//   );
+// })}
+// </ul>
 
-        <Grid item xs={6}>
-          <Item>
-            <h3>프렌치 디너(French dinner)</h3>
-              <ul>
-                <li>커피 1잔</li>
-                <li>와인 1잔</li>
-                <li>샐러드</li>
-                <li>스테이크</li>
-              </ul>
-              <ControlledOpenSelect></ControlledOpenSelect>
+// const amountInputHandler = event => {
+//   onChangeProps(item.id, 'amount', +event.target.value);
+// };
 
-            <h3>₩ 6000</h3>
-          <CustomizedButtons>
-          </CustomizedButtons> 
-          </Item>
-        </Grid>
+// const amountIncreaseHandler = event => {
+//   event.preventDefault();
+//   onChangeProps(item.id, 'amount', item.amount + 1);
+// };
 
-        <Grid item xs={6}>
-          <Item>
-            <h3>잉글리시 디너(English dinner)</h3>
-                <ul>
-                  <li>에그 스크램블</li>
-                  <li>베이컨</li>
-                  <li>빵</li>
-                  <li>스테이크</li>
-                </ul>
-                <ControlledOpenSelect></ControlledOpenSelect>
+// const amountDecreaseHandler = event => {
+//   event.preventDefault();
+//   onChangeProps(item.id, 'amount', item.amount - 1);
+// };
 
-            <h3>₩ 7000</h3>
-            <CustomizedButtons>
-            </CustomizedButtons> 
-          </Item>
-        </Grid>
+// useEffect(() => {
+//   setIsBtnValid(item.amount > 1);
+// }, [item.amount]);
 
-        <Grid item xs={6}>
-        <ButtonBase > 
-          <Item>
-            <h3>샴페인 축제 디너(Champagne Feast dinner)</h3>
-                <ul>
-                  <li>샴페인 1병</li>
-                  <li>바게트빵 4조각</li>
-                  <li>커피 1포트</li>
-                  <li>와인 2잔</li>
-                  <li>스테이크</li>
-                </ul>
-                <ControlledOpenSelect></ControlledOpenSelect>
-            <h3>₩ 8000</h3>
-            <h3>* 2인 이상 주문부터 가능 *</h3>
-            
-            <CustomizedButtons>
-            </CustomizedButtons> 
-          </Item>
-          </ButtonBase>
-        </Grid>
+// const onChangeProps = (id, key, value) => {
+//   setItemList(prevState => {
+//     return prevState.map(obj => {
+//       if (obj.id === id) {
+//         return { ...obj, [key]: value };
+//       } else {
+//         return { ...obj };
+//       }
+//     });
+//   });
+// };
 
-        
-        
-      </Grid>
-      
-    </Box>
-    <Grid item xs={12} >
-          <Item>xs=8</Item>
-      </Grid>
-    </Container>
-    </Container>
-  );
-}
-function StandardImageList() {
-  return (
-    <ImageList sx={{ width: 1, height: 600 }} cols={1} rowHeight={4}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-  );
-}
-
-const itemData = [
-  {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-  },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-  //   title: 'Burger',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-  //   title: 'Camera',
-  // }
-];
-
-function BoxComponent() {
-  return (
-    <Box component="span" sx={{ p: 1, border: '1px dashed grey' }}>
-      <Button>Save</Button>
-    </Box>
-  );
-}
+// const totalCheckboxHandler = value => {
+//   setItemList(prevState => {
+//     return prevState.map(obj => {
+//       return { ...obj, isChecked: value };
+//     });
+//   });
+//   setTotalCheckboxisChecked(value);
+// };
 
 
 
-function Nav() {
-  return (
-    <nav style={{ border: '3px solid brown' }}>
-      <ol>
-        <li>html</li>
-        <li>css</li>
-      </ol>
-    </nav>
-  );
-}
+// import ItemPrice from './ItemPrice';
+// import './SideBar.scss';
 
-function Food() {
-  return (
-    <article style={{ border: '3px solid brown'}}>
-      <h2>welcome1</h2>
-      hello web
-    </article>
-  );
-}
+// const SideBar = props => {
+//   const { totalPrice } = props;
 
-function Menupage() {
-  return (
-    <Container>
-      {/* <Header></Header> */}
-      <Container Fixed>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing="70">
-            <Grid item xs="12">
-              <Nav></Nav>
-              <StandardImageList></StandardImageList>
-            </Grid>
+//   const [deliveryCost, setDeliveryCost] = useState(0);
 
-            <Grid item xs="12">
-              <Food>fsfsf</Food>
-            </Grid>
-            <Grid item xs="12">
-              <Food></Food>
-            </Grid>
-            <Grid item xs="12">
-              <Food></Food>
-            </Grid>
-            <Grid item xs="12">
-              <Food></Food>
-            </Grid>
-            <Grid item xs="12">
-              <Food></Food>
-            </Grid>
-            <Grid item xs="12">
-              <Food></Food>
-            </Grid>
-            <Grid item xs="12">
-              <Food></Food>
-            </Grid>
-          </Grid>
+//   useEffect(() => {
+//     setDeliveryCost(totalPrice < 30000 ? (totalPrice ? 3000 : 0) : 0);
+//   }, [totalPrice]);
 
-          {/* <BoxComponent></BoxComponent> */}
-        </Box>
-      </Container>
-    </Container>
-  );
-}
+//   const PRICE_CATEGORY_LIST = [
+//     {
+//       id: 1,
+//       title: '상품 금액',
+//       price: `+${totalPrice.toLocaleString('en')}`,
+//     },
+//     {
+//       id: 2,
+//       title: '상품 할인',
+//       price: '-0',
+//     },
+//     {
+//       id: 3,
+//       title: '포장비',
+//       price: '+0',
+//     },
+//     {
+//       id: 4,
+//       title: '부가 쇼핑백',
+//       price: '+0',
+//     },
+//     {
+//       id: 5,
+//       title: '배송비',
+//       price: `+${deliveryCost.toLocaleString('en')}`,
+//     },
+//   ];
 
-export default BasicGrid
+//   return (
+//     <section className="sidebar">
+//       <div className="totalAmountOfPrice">
+//         <ul>
+//           {PRICE_CATEGORY_LIST.map(ele => (
+//             <ItemPrice key={ele.id} title={ele.title} price={ele.price} />
+//           ))}
+//         </ul>
+//         <div className="expectedPrice">
+//           <p>결제 예상 금액</p>
+//           <p>
+//             <span>{(totalPrice + deliveryCost).toLocaleString('en')}</span>
+//             <span>원</span>
+//           </p>
+//         </div>
+//         <button>{`${(totalPrice + deliveryCost).toLocaleString(
+//           'en'
+//         )}원 주문하기`}</button>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export SideBar;
+
+// export default BasicGrid
+
+
+// export newcart

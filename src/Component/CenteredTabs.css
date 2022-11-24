@@ -6,3 +6,11 @@
  font-family:"naver1";
  /* font-size: 30px; */
 }
+
+.tabheader{
+    font-family:"naver1";
+}
+@font-face{
+    font-family:"naver1";
+    src: url("../font/NaverNanumSquareNeo/TTF/NanumSquareNeo-cBd.ttf")
+}

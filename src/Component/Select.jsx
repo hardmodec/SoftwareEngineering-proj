@@ -53,9 +53,9 @@ export default function ControlledOpenSelect() {
           color="info"
 
         >
-          <MenuItem value={1000}>simple / +₩ 1.0</MenuItem>
+          <MenuItem value={0}>simple / +₩ 0.0</MenuItem>
           <MenuItem value={2000}>grand / +₩ 2.0</MenuItem>
-          <MenuItem value={3000}>delux / +₩ 3.0</MenuItem>
+          <MenuItem value={5000}>delux / +₩ 5.0</MenuItem>
         </Select>
       </FormControl>
       </ThemeProvider>
