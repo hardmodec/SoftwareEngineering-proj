@@ -11,11 +11,11 @@ import {dinner} from '../../Component/item';
 //import menustyle from '../../Component/item';
 import "../Accountpage/Accountpage.css"
 import {newcart} from "../Menupage/Main"
-
+import {CartProvider} from "../../Context/CartContext"
 
 function ShoppingBagPage(){
     
-    const menuList = dinner.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.name}, {menu.dinnerid}<button></button></div>));
+    const menuList = dinnerCart.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.dinnerid}, {menu.menulist[0].menuid}<button className="btn1"></button></div>));
 
     return(
     <section>
@@ -34,7 +34,6 @@ function ShoppingBagPage(){
     );
 
 }
-
 
 export default ShoppingBagPage;
 

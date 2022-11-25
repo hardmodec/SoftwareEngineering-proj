@@ -12,7 +12,7 @@ function Accountpage(){
     <div className="password">password:</div>
     <div className="address">address:</div>
     <div className="phone_number">phone_number:</div>
-    <aside className="cartinfo">CART:</aside>
+    {/* <aside className="cartinfo">CART:</aside> */}
 
         </>
     );

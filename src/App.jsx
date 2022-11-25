@@ -33,7 +33,7 @@ function App() {
   // const header = (userStatus === "Admin") ? <Header></Header> : <StaffHeader></StaffHeader>;
 
   return (
-    // <CartProvider>
+    <CartProvider>
       <Router>
         <Routes>
             <Route path="" element={<Navigate replace to="home" />} />
@@ -70,7 +70,7 @@ function App() {
             
         </Routes>
       </Router>
-      // </CartProvider>
+  </CartProvider>
       
       
   //   <Router>

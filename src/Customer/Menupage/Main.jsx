@@ -22,10 +22,11 @@ import CartContext from '../../Context/CartContext'
 import {CartProvider, CartConsumer} from '../../Context/CartContext'
 import Detailmenu from '../../Component/Detailbutton'
 import "./menu.css"
-
+import {useContext} from "react"
 
 export function CustomizedButtons() {
-  
+  const Cart = useContext(CartContext)
+  const {AddMenu} = Cart
   // const [ordercart, setOrdercart] = useState([])
   // setOrdercart([...ordercart, menucart])
   return (
@@ -34,15 +35,14 @@ export function CustomizedButtons() {
 }
 
 function Menupage() {
-  const [ordercart, setOrdercart] = useState()
-
+  // const [ordercart, setOrdercart] = useContext()
   return (
     <Container>
     <Container Fixed>
     <Box sx={{ flexGrow: 1, margin: 10}} >
       <Grid container rowSpacing={8} columnSpacing={9}>
         <Grid item xs={6}>
-          <Item elevation={8}>
+          <Item elevation={8} sx={{borderRadius:'25px'}}>
           <div className="menu1">
             <h3>발렌타인 디너(Valentine dinner)</h3>
             <ul>
@@ -51,7 +51,7 @@ function Menupage() {
             </ul>
             
 
-            <ControlledOpenSelect></ControlledOpenSelect>
+            <ControlledOpenSelect dinnerid={1}/> 
 
             <h3>기본가격: ₩ {dinner[0].price} / ₩ {dinner[0].price+2000} / ₩ {dinner[0].price+5000}</h3>
             
@@ -62,7 +62,7 @@ function Menupage() {
         </Grid>
 
         <Grid item xs={6}>
-          <Item elevation={8}>
+          <Item elevation={8} sx={{borderRadius:'25px'}}>
           <div className="menu1">
 
             <h3>프렌치 디너(French dinner)</h3>
@@ -83,7 +83,7 @@ function Menupage() {
         </Grid>
 
         <Grid item xs={6}>
-          <Item elevation={8}>
+          <Item elevation={8} sx={{borderRadius:'25px'}}>
           <div className="menu1">
 
             <h3>잉글리시 디너(English dinner)</h3>
@@ -104,7 +104,7 @@ function Menupage() {
         </Grid>
 
         <Grid item xs={6}>
-          <Item elevation={8}>
+          <Item elevation={8} sx={{borderRadius:'25px'}}>
           <div className="menu1">
 
             <h3>샴페인 축제 디너(Champagne Feast dinner)</h3>

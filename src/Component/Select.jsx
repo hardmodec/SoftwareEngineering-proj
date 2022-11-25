@@ -9,7 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Colortheme1 from '../Component/Colortheme1'
 
 
-export default function ControlledOpenSelect() {
+export default function ControlledOpenSelect({dinnerid}) {
   const [price, setPrice] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
@@ -42,6 +42,7 @@ export default function ControlledOpenSelect() {
       <FormControl sx={{ m: 1, minWidth: 120 }}size="small">
         <InputLabel id="demo-controlled-open-select-label" color="info">STYLE</InputLabel>
         <Select
+          dinnermenu= {dinnerid}
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
           open={open}
@@ -51,7 +52,6 @@ export default function ControlledOpenSelect() {
           label="style"
           onChange={handleChange}
           color="info"
-
         >
           <MenuItem value={0}>simple / +₩ 0.0</MenuItem>
           <MenuItem value={2000}>grand / +₩ 2.0</MenuItem>
