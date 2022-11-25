@@ -11,12 +11,25 @@ import {dinner} from '../../Component/item';
 //import menustyle from '../../Component/item';
 import "../Accountpage/Accountpage.css"
 import {newcart} from "../Menupage/Main"
-import {CartProvider} from "../../Context/CartContext"
+import CartContext, {CartProvider} from "../../Context/CartContext"
 
 function ShoppingBagPage(){
-    
+    const Cart = React.useContext(CartContext)
+    const {menu1Cart1, menu2Cart1, menu3Cart1, menu4Cart1, dinnerCart,
+        AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner,} = Cart
     const menuList = dinnerCart.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.dinnerid}, {menu.menulist[0].menuid}<button className="btn1"></button></div>));
 
+        // if (dinnerCart.length === 0){
+        //     return( 
+        //     <h2> 텅 비어있습니다~</h2>
+        //     )
+        // }
+        // else{
+        //     return( 
+        //         dinnerCart.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.dinnerid}, {menu.menulist[0].menuid}<button className="btn1"></button></div>));
+        //     )
+        // }
+    
     return(
     <section>
         <article>    

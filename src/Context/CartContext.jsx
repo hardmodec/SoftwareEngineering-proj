@@ -16,7 +16,11 @@ const CartContext = createContext({
     AddMenu4 : () => {},
 
     dinnerCart : [],
-    AddDinner : () => {},
+    AddDinner1 : () => {},
+    AddDinner2 : () => {},
+    AddDinner3 : () => {},
+    AddDinner4 : () => {},
+
 });
 
 
@@ -27,16 +31,16 @@ const CartProvider = ({children}) => {
     const [menu3Cart1, setMenu3Cart1] = useState({dinnerid: 3, dinneramount: 1, menulist:[{menuid: 6, amount: 1}, {menuid: 7, amount: 1}, {menuid: 8, amount: 1}, {menuid: 1, amount: 1}]})
     const [menu4Cart1, setMenu4Cart1] = useState({dinnerid: 4, dinneramount: 1, menulist:[{menuid: 4, amount: 5}, {menuid: 9, amount: 1}, {menuid: 3, amount: 5}, {menuid: 2, amount: 1}, {menuid: 1, amount: 1}]})
     const [dinnerCart, setDinnerCart] = useState([
-        {dinnerid: 1, dinneramount:1, menulist:[{menuid: 2, amount: 1}, {menuid: 1, amount: 1}]},
-        {dinnerid: 2, dinneramount:1, menulist:[{menuid: 3, amount: 1}, {menuid: 2, amount: 1}, {menuid: 5, amount: 1}, {menuid: 1, amount: 1}]},
-        {dinnerid: 3, dinneramount:1, menulist:[{menuid: 6, amount: 1}, {menuid: 7, amount: 1}, {menuid: 8, amount: 1}, {menuid: 1, amount: 1}]},
-        {dinnerid: 4, dinneramount:1, menulist:[{menuid: 4, amount: 5}, {menuid: 9, amount: 1}, {menuid: 3, amount: 5}, {menuid: 2, amount: 1}, {menuid: 1, amount: 1}]}
+        // {dinnerid: 1, dinneramount:1, menulist:[{menuid: 2, amount: 1}, {menuid: 1, amount: 1}]},
+        // {dinnerid: 2, dinneramount:1, menulist:[{menuid: 3, amount: 1}, {menuid: 2, amount: 1}, {menuid: 5, amount: 1}, {menuid: 1, amount: 1}]},
+        // {dinnerid: 3, dinneramount:1, menulist:[{menuid: 6, amount: 1}, {menuid: 7, amount: 1}, {menuid: 8, amount: 1}, {menuid: 1, amount: 1}]},
+        // {dinnerid: 4, dinneramount:1, menulist:[{menuid: 4, amount: 5}, {menuid: 9, amount: 1}, {menuid: 3, amount: 5}, {menuid: 2, amount: 1}, {menuid: 1, amount: 1}]}
     ])
 
     const AddMenu1 = (menuid, amount) => {
         for (let i = 0; i < menu1Cart1.menulist.length; i++) {
             if (menu1Cart1.menulist[i].menuid === menuid) {
-                setMenu1Cart1(menu1Cart1.menulist.amount= amount)
+                setMenu1Cart1(menu1Cart1.menulist.amount *= amount)
             }
         }
     }
@@ -54,7 +58,7 @@ const CartProvider = ({children}) => {
     //     setMenuCart2(menu2Cart2=[])
     // }
     const AddMenu3 = (menuid, amount) => {
-        for (let i = 0; i < menu3Cart1.menulist.length; i++) {
+        for (let i = 0; i < 4; i++) {
             if (menu3Cart1.menulist[i].menuid === menuid) {
                 setMenu3Cart1(menu3Cart1.menulist.amount= amount)
             }
@@ -64,15 +68,28 @@ const CartProvider = ({children}) => {
     //     setMenuCart3(menuCart3=[])
     // }
     const AddMenu4 = (menuid, amount) => {
-        for (let i = 0; i < menu4Cart1.menulist.length; i++) {
+        for (let i = 0; i < 5; i++) {
             if (menu4Cart1.menulist[i].menuid === menuid) {
                 setMenu4Cart1(menu4Cart1.menulist.amount= amount)
             }
         }
     }
 
-    const AddDinner = () => {
-
+    const AddDinner1 = () => {
+        setDinnerCart([])
+        setDinnerCart([...dinnerCart, ...menu1Cart1])
+    }
+    const AddDinner2 = () => {
+        setDinnerCart([])
+        setDinnerCart([...dinnerCart, ...menu2Cart1])
+    }
+    const AddDinner3 = () => {
+        setDinnerCart([])
+        setDinnerCart([...dinnerCart, ...menu3Cart1])
+    }
+    const AddDinner4 = () => {
+        setDinnerCart([])
+        setDinnerCart([...dinnerCart, ...menu4Cart1])
     }
     // const ResetMenu4 = (menuid, amount) => {
     //     setMenuCart4(menuCart4=[])
@@ -83,7 +100,7 @@ const CartProvider = ({children}) => {
     return (
         <CartContext.Provider value={{
             menu1Cart1, menu2Cart1, menu3Cart1, menu4Cart1, dinnerCart,
-            AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner,
+            AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner1, AddDinner2, AddDinner3, AddDinner4 
             // AddMenu, AddDinner,
         }}
         >{children}</CartContext.Provider>
