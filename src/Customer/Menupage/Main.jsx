@@ -18,69 +18,52 @@ import {useState} from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
-import CartContext from '../../Context/CartContext';
+import CartContext from '../../Context/CartContext'
+import {CartProvider, CartConsumer} from '../../Context/CartContext'
+import Detailmenu from '../../Component/Detailbutton'
+import "./menu.css"
 
 
-function Detailmenu({menuid}) {
-
-    const Cart = React.useContext(CartContext);
-    const {menuCart, AddMenu} = Cart
-    
-    const [menucart, setMenucart1] = useState([])
-    
+export function CustomizedButtons() {
+  
+  // const [ordercart, setOrdercart] = useState([])
+  // setOrdercart([...ordercart, menucart])
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Amount
-        </InputLabel>
-        <NativeSelect
-          defaultValue={1}
-          inputProps={{
-            name: 'amount',
-            id: menuid,
-          }}
-        >
-          <option onClick={{} = () => {Addmenu(menuid, 0)}} id={menuid} value={0}>0</option>
-          <option onClick={{Addmenu}} id={menuid} value={1}>1</option>
-          <option onClick={{Addmenu}} id={menuid} value={2}>2</option>
-          <option onClick={{Addmenu}} id={menuid} value={3}>3</option>
-          <option onClick={{Addmenu}} id={menuid} value={4}>4</option>
-          <option onClick={{Addmenu}} id={menuid} value={5}>5</option>
-
-        </NativeSelect>
-      </FormControl>
-    </Box>
+    <ColorButton variant="contained" onClick={{}}>장바구니에 추가</ColorButton>
   );
 }
 
-
-
-function BasicGrid() {
+function Menupage() {
   const [ordercart, setOrdercart] = useState()
   return (
     <Container>
     <Container Fixed>
-    <Box sx={{ flexGrow: 1, margin: 5}} >
+    <Box sx={{ flexGrow: 1, margin: 10}} >
       <Grid container rowSpacing={8} columnSpacing={9}>
         <Grid item xs={6}>
-          <Item>
+          <Item elevation={8}>
+          <div className="menu1">
             <h3>발렌타인 디너(Valentine dinner)</h3>
             <ul>
               <li>와인 1잔 <Detailmenu menuid={2}/> </li>
               <li>스테이크 <Detailmenu menuid={1}/> </li>
             </ul>
+            
+
             <ControlledOpenSelect></ControlledOpenSelect>
 
-            <h3>기본가격: ₩ 4.5 / ₩ 4.7 / ₩ 5.0</h3>
+            <h3>기본가격: ₩ {dinner[0].price} / ₩ {dinner[0].price+2000} / ₩ {dinner[0].price+5000}</h3>
             
               <CustomizedButtons >
               </CustomizedButtons>  
+            </div>
           </Item>
         </Grid>
 
         <Grid item xs={6}>
-          <Item>
+          <Item elevation={8}>
+          <div className="menu1">
+
             <h3>프렌치 디너(French dinner)</h3>
               <ul>
                 <li>커피 1잔 <Detailmenu menuid={3}/> </li>
@@ -90,14 +73,18 @@ function BasicGrid() {
               </ul>
               <ControlledOpenSelect></ControlledOpenSelect>
 
-            <h3>기본가격: ₩ {dinner[1].price} / ₩ 5.8 / ₩ 6.1</h3>
+            <h3>기본가격: ₩ {dinner[1].price} / ₩ {dinner[1].price+2000} / ₩ {dinner[1].price+5000}</h3>
           <CustomizedButtons>
           </CustomizedButtons> 
+          </div>
+
           </Item>
         </Grid>
 
         <Grid item xs={6}>
-          <Item>
+          <Item elevation={8}>
+          <div className="menu1">
+
             <h3>잉글리시 디너(English dinner)</h3>
                 <ul>
                   <li>에그 스크램블 <Detailmenu menuid={6}/> </li>
@@ -107,14 +94,18 @@ function BasicGrid() {
                 </ul>
                 <ControlledOpenSelect></ControlledOpenSelect>
 
-            <h3>기본가격: ₩ {dinner.잉글리시디너.price} / ₩ 5.0 / ₩ 5.3</h3>
+            <h3>기본가격: ₩ {dinner[2].price} / ₩ {dinner[2].price+2000} / ₩ {dinner[2].price+5000}</h3>
             <CustomizedButtons>
             </CustomizedButtons> 
+            </div>
+
           </Item>
         </Grid>
 
         <Grid item xs={6}>
-          <Item>
+          <Item elevation={8}>
+          <div className="menu1">
+
             <h3>샴페인 축제 디너(Champagne Feast dinner)</h3>
                 <ul>
                   <li>샴페인 1병      <Detailmenu menuid={4}/> </li>
@@ -124,22 +115,39 @@ function BasicGrid() {
                   <li>스테이크       <Detailmenu menuid={1}/> </li>
                 </ul>
                 <ControlledOpenSelect></ControlledOpenSelect>
-            <h3>₩ {dinner.샴페인축제디너.price} / ₩ 13.8 / ₩ 14.1</h3>
+            <h3>₩ {dinner[3].price} / ₩ {dinner[3].price+2000} / ₩ {dinner[3].price+5000}</h3>
             <h3>* 2인 식사 기준 *</h3>
             
             <CustomizedButtons>
             </CustomizedButtons> 
+            </div>
+
           </Item>
         </Grid>
       </Grid>
     </Box>
-    <Grid item xs={12} >
+    {/* <Grid item xs={12} >
           <Item>xs=8</Item>
-      </Grid>
+      </Grid> */}
     </Container>
     </Container>
   );
 }
+
+
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#e8eaf6',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+  height: 700,
+  width: 460,
+}));
+
+export default Menupage;
+
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
@@ -151,25 +159,8 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 
-export function CustomizedButtons() {
-  const [ordercart, setOrdercart] = useState([])
-  setOrdercart([...ordercart, menucart])
-  return (
-    <ColorButton variant="contained" onClick={{}}>장바구니에 추가</ColorButton>
-  );
-}
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#e8eaf6',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  height: 440,
-  width: 460,
-}));
 
-export default BasicGrid;
 
 // const DUMMY_ITEM_LIST = [
 //   {

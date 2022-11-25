@@ -16,7 +16,8 @@ import { purple } from '@mui/material/colors';
 import ControlledOpenSelect from '../../Component/Select';
 import { useNavigate } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
-
+import "../Accountpage/Accountpage.css"
+import { borders } from '@mui/system';
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
@@ -46,28 +47,32 @@ function Homepage() {
   return (
     <Container>
     <Container Fixed>
+    <div className="homepage">
     <Box sx={{ flexGrow: 1, margin: 5}} >
       
         <Grid container rowSpacing={8} columnSpacing={9}>
           <Grid item xs={6}>
-            <ButtonBase onClick={() => navigate("/information")}>
-            <Item>
+            <div className="homepage4">
+            <ButtonBase sx={{ width: 300 }} onClick={() => navigate("/login")}>
+            <Item elevation={8} sx={{borderRadius:'25px'}}>
               
-              
-
+              <div className="homepage2">
               <h3>Customer</h3>
               <h4>고객이신가요?</h4>
-              
+              </div>  
             </Item>
             </ButtonBase>
+            </div>
           </Grid>
 
           <Grid item xs={6}>
-          <ButtonBase onClick={() => navigate("/noworder")}>
-            <Item>
-              <h3>Staff</h3>
+          <ButtonBase  sx={{ width: 300 }} onClick={() => navigate("/stafflogin")}>
+            <Item elevation={8} sx={{borderRadius:'25px'}}>
+            <div className="homepage2" >
+
+              <h3>Staff/Admin</h3>
               <h4>직원이신가요?</h4>
-              
+            </div>
             
             </Item>
             </ButtonBase>
@@ -76,7 +81,7 @@ function Homepage() {
         </Grid>
         
     </Box>
-    
+    </div>
     </Container>
     </Container>
   );

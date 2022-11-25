@@ -68,7 +68,7 @@ function Signuppage() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
                   name="fullame"
@@ -78,7 +78,7 @@ function Signuppage() {
                   label="Full Name"
                   autoFocus
                 />
-              </Grid>
+              </Grid> */}
               {/* <Grid item xs={12} sm={6}>
                 <TextField
                   required
@@ -114,11 +114,11 @@ function Signuppage() {
                 <TextField
                   required
                   fullWidth
-                  name="address"
-                  label="address"
-                  type="address"
-                  id="address"
-                  autoComplete="new-password"
+                  name="phonenumber"
+                  label="phonenumber"
+                  type="phonenumber"
+                  id="phonenumber"
+                  autoComplete="new-phonenumber"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -134,8 +134,9 @@ function Signuppage() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               color="secondary"
+              onClick={() => navigate("/login/signup2")}
             >
-              Sign Up
+              Sign Up (next)
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

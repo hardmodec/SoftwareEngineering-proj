@@ -15,7 +15,7 @@ import {newcart} from "../Menupage/Main"
 
 function ShoppingBagPage(){
     
-    const menuList = dinner.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.name}, {menu.dinnerid}</div>));
+    const menuList = dinner.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.name}, {menu.dinnerid}<button></button></div>));
 
     return(
     <section>
@@ -184,7 +184,7 @@ export default ShoppingBagPage;
 
 
 
-{/* <div>
+/* <div>
     {prototypes.map((prototype) => {
     	const { id, thumbnail, title, price, desc, picUrl } = prototype;
     	const onAdd = () => {addToOrder(id)} //** 이 부분에서 클릭이벤트로 해당 id 보내줌
@@ -312,4 +312,4 @@ const addToOrder = useCallback((id) => {
   }, []);
   const removeAll = useCallback((id) => { //전체 삭제 
     setOrders([]); //빈 배열로 만들어줌
-  }, []); */}
+  }, []); */

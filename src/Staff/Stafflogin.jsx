@@ -11,10 +11,10 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import Header from '../../Component/Header';
-import Colortheme1 from '../../Component/Colortheme1'
+import Colortheme1 from '../Component/Colortheme1'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import "./staff.css"
 
 
 
@@ -38,7 +38,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-function Loginpage() {
+function Stafflogin() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -109,7 +109,7 @@ function Loginpage() {
               variant="contained"
               color="secondary"
               sx={{ mt: 3, mb: 2 }}
-              onClick={() => navigate("/menupage")}
+              onClick={() => navigate("/noworder")}
             >
               Sign In
             </Button>
@@ -119,13 +119,13 @@ function Loginpage() {
                 
               </Grid>
 
-              <ThemeProvider theme={Colortheme1}>
+              {/* <ThemeProvider theme={Colortheme1}>
               <Grid item color="error">
                 <Link  onClick={() => navigate("/login/signup")} variant="primary">
                   {'계정이 없으신가요? 회원가입'}
                 </Link>
               </Grid>
-              </ThemeProvider>
+              </ThemeProvider> */}
 
             </Grid>
           </Box>
@@ -137,4 +137,4 @@ function Loginpage() {
   );
 }
 
-export default Loginpage;
+export default Stafflogin;

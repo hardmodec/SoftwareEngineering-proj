@@ -16,47 +16,61 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import BasicButtons2 from './Component/test';
 import CustomizedBadges from './Component/ShoppingCart';
-import CustomerList from './Staff/CustomerList';
-import EntireOrder from './Staff/EntireOrder'
+import Stafflogin from './Staff/Stafflogin';
+import NowOrder from './Staff/NowOrder'
 import Inventory from './Staff/Inventory'
 import VipList from './Staff/VipList'
-import NowOrder from './Staff/NowOrder'
 import StaffHeader from './Component/StaffHeader';
 import { CartProvider } from './Context/CartContext';
+import "./Component/CenteredTabs.css"
+import Signuppage2 from './Customer/Loginpage/Signup2'
+import Box from '@mui/material/Box';
+
+
 
 function App() {
-  const userStatus = "Admin"
-
-  const header = (userStatus === "Admin") ? <Header></Header> : <StaffHeader></StaffHeader>;
+  // const userStatus = "Admin"
+  // const header = (userStatus === "Admin") ? <Header></Header> : <StaffHeader></StaffHeader>;
 
   return (
-    <CartProvider>
+    // <CartProvider>
       <Router>
-        <Header></Header>       
         <Routes>
             <Route path="" element={<Navigate replace to="home" />} />
           
             {/* home */}
-            <Route path="home" element={<Homepage />} />
+            <Route path="home" element={<>
+              <Container Fluid>
+              <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">WELCOME</h3></Box>
+              <Box > </Box>
+              </Container>
+              <Homepage/> </>} />
             {/* customer */}
-            <Route path="information" element={<Informationpage />} />
-            <Route path="account" element={<Accountpage />} />
+            <Route path="information" element={<> <Header/><Informationpage/> </>} />
+            <Route path="account" element={<><Header/><Accountpage/> </>} />
             <Route path="login">
-              <Route path="" element={<Loginpage />} />
-              <Route path="signup" element={<Signuppage />} />
+              <Route path="" element={<><Header/><Loginpage /></>} />
+              <Route path="signup" element={<><Header/><Signuppage /> </>} />
+              <Route path="signup2" element={<><Header/><Signuppage2 /> </>} />
+
             </Route>
-            <Route path="menu" element={<Menupage />} />
-            <Route path="shoppingbag" element={<ShoppingBagPage />} />
+            <Route path="menupage" element={<><Header/><Menupage/> </>} />
+            <Route path="shoppingbag" element={<><Header/><ShoppingBagPage /> </>} />
             {/* staff */}
-            <Route path="staff/customerlist" element={<CustomerList />} />
-            <Route path="entireorder" element={<EntireOrder />} />
-            <Route path="inventory" element={<Inventory />}/>
-            <Route path="noworder" element={<NowOrder />} />
-            <Route path="viplist" element={<VipList />} />
+            <Route path="stafflogin" element={<><header>
+              <Container Fluid>
+              <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">STAFF</h3></Box>
+              <Box > </Box>
+              </Container>
+              </header><Stafflogin /> </>} />
+            <Route path="noworder" element={<><StaffHeader/><NowOrder /> </>} />
+            <Route path="inventory" element={<><StaffHeader/><Inventory /> </>}/>
+                    {/* <Route path="noworder" element={<NowOrder />} /> */}
+            <Route path="viplist" element={<><StaffHeader/><VipList /> </>} />
             
         </Routes>
       </Router>
-      </CartProvider>
+      // </CartProvider>
       
       
   //   <Router>
