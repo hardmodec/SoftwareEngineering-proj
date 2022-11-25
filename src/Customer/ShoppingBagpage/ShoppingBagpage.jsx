@@ -7,16 +7,16 @@
 import * as React from 'react';
 import  Box  from '@mui/material/Box';
 import { useState, useEffect } from 'react';
-import {dinner} from '../../Component/item';
 //import menustyle from '../../Component/item';
 import "../Accountpage/Accountpage.css"
 import {newcart} from "../Menupage/Main"
 import CartContext, {CartProvider} from "../../Context/CartContext"
+import {dinner, basicmenu, menustyle, grade} from '../../Component/item'
 
 function ShoppingBagPage(){
     const Cart = React.useContext(CartContext)
     const {menu1Cart1, menu2Cart1, menu3Cart1, menu4Cart1, dinnerCart,
-        AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner,} = Cart
+        AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner1, AddDinner2, AddDinner3, AddDinner4} = Cart
     const menuList = dinnerCart.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.dinnerid}, {menu.menulist[0].menuid}<button className="btn1"></button></div>));
 
         // if (dinnerCart.length === 0){

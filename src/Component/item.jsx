@@ -49,7 +49,7 @@ export const dinner = [
   },
 ]
 
-export const basicmenu = {
+export const basicmenu = [{
   steak:{
     menuid: 1,
     name: "스테이크",
@@ -110,11 +110,11 @@ export const basicmenu = {
     amount: 1,
     price: 2000,
   }
-}
+},]
   
 
 
-  export const menustyle = {
+  export const menustyle = [{
     simple: {
       stlyeid: 1,
       price: 3000,
@@ -146,9 +146,9 @@ export const basicmenu = {
         flower: "작은꽃병",
       },
     }
-  }
+  },]
 
-  export const consumergrade = {
+  export const grade = [{
       bronze: {
         gradeid: 1,
         rate: 0.1,
@@ -173,5 +173,5 @@ export const basicmenu = {
         gradeid: 6,
         rate: 0.8,
       }
-  }
+    },]
 
