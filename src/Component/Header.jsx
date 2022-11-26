@@ -10,7 +10,7 @@ function Header() {
     return (
       <header>
         <Container Fluid>
-        <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3>CUSTOMER</h3></Box>
+        <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3>CUSTOMER - {localStorage.getItem("userid")}님 환영합니다.</h3></Box>
         <Box >
         <CenteredTabs></CenteredTabs>
         </Box>

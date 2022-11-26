@@ -84,21 +84,23 @@ function Loginpage() {
   const [values, setValues] = useState({ email: "",password : ""  });
 
   const handleChange = (event) => {
+    event.preventDefault(); 
     const { name, value } = event.target;
     setValues({ ...values, [name]: value });
   };
-  const handleClick = () => {
-    axios.post('http://35.216.103.95:3000/auth/login/', "help")
+  const handleClick = async (e) => {
+    e.preventDefault(); 
+    await axios.post('http://35.216.103.95:3000/auth/login/', values)
     .then((res)=>{
-      alert("true")
+      alert("로그인 성공!")
       console.log(res.data)
       localStorage.clear()
-      localStorage.setItem('id', res.data.id)
-      localStorage.setItem('token', res.data.token)
-      navigate('menupage')
+      localStorage.setItem('userid', res.data.user.email)
+      localStorage.setItem('token', res.data.access_token)
+      navigate('/menupage')
     })
     .catch((Error)=>{
-      alert("false")
+      alert("이메일 혹은 비밀번호를 다시 확인해주세요.")
       console.log("로그인 실패 + \n" + Error)
     })
   };
@@ -172,7 +174,7 @@ function Loginpage() {
               variant="contained"
               color="secondary"
               sx={{ mt: 3, mb: 2 }}
-              onClick={() => handleClick}
+              onClick={handleClick}
               //로그인 버튼 로그아웃으로 바껴야함
             >
               Sign In

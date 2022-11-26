@@ -29,6 +29,7 @@ function CenteredTabs() {
     const handleLoginicon = () => {
       setLogin(!login);
     };
+    
     // const [{ cart, user }, dispatch] = useStateValue();
     return (
       
@@ -43,11 +44,11 @@ function CenteredTabs() {
           <Tab onClick={() => navigate("/information")} icon={<ImportContactsRoundedIcon />} label="소개" sx={{ mt: 5, mr: 3, ml: 5 }} />
           <Tab onClick={() => navigate("/menupage")} icon={<RestaurantMenuIcon  />} label="메뉴 및 주문" sx={{ mt: 5, mr: 3, ml: 5 }}/>
           <div className="bookmarkIcon" onClick={handleLoginicon}>
-          {login ? (
+          {/* {login ? (
              <Tab onClick={() => navigate("/login")} icon={<LoginRoundedIcon  />} label="로그인" sx={{ mt: 5, mr: 3, ml: 5 }}/>
-          ):(
-            <Tab onClick={() => navigate("/home")} icon={<LoginRoundedIcon  />} label="로그아웃" sx={{ mt: 5, mr: 3, ml: 5 }}/>
-          )}
+          ):( */}
+            <Tab onClick={logout} icon={<LoginRoundedIcon  />} label="로그아웃" sx={{ mt: 5, mr: 3, ml: 5 }}/>
+        
           </div>
           {/* <Tab onClick={() => navigate("/login")} icon={<LoginRoundedIcon />}     font-family="naver1" label="로그인" sx={{ mt: 5, mr: 3, ml: 5 }}/> */}
           <Tab
@@ -67,6 +68,12 @@ function CenteredTabs() {
     );
 }
 
+const logout = () => {
+  let token = localStorage.getItem('token')
+  localStorage.clear()
+  window.location.replace('http://localhost:3000/')
+};
 
 
+export {logout}
 export default CenteredTabs

@@ -79,16 +79,6 @@ function Signuppage() {
                   autoFocus
                 />
               </Grid> */}
-              {/* <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   required
@@ -104,7 +94,7 @@ function Signuppage() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Password1"
                   type="password"
                   id="password"
                   autoComplete="new-password"
@@ -114,8 +104,19 @@ function Signuppage() {
                 <TextField
                   required
                   fullWidth
+                  name="password2"
+                  label="Password2"
+                  type="password2"
+                  id="password2"
+                  autoComplete="confirm-password1"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
                   name="phonenumber"
-                  label="phonenumber"
+                  label="phone_number"
                   type="phonenumber"
                   id="phonenumber"
                   autoComplete="new-phonenumber"
