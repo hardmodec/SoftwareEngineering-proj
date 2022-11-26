@@ -17,15 +17,14 @@ import Button from '@mui/material/Button';
 import BasicButtons2 from './Component/test';
 import CustomizedBadges from './Component/ShoppingCart';
 import Stafflogin from './Staff/Stafflogin';
-import NowOrder from './Staff/NowOrder'
-import Inventory from './Staff/Inventory'
-import VipList from './Staff/VipList'
+import NowOrder from './Staff/NowOrder';
+import Inventory from './Staff/Inventory';
 import StaffHeader from './Component/StaffHeader';
 import { CartProvider } from './Context/CartContext';
 import "./Component/CenteredTabs.css"
-import Signuppage2 from './Customer/Loginpage/Signup2'
+import Signuppage2 from './Customer/Loginpage/Signup2';
 import Box from '@mui/material/Box';
-
+import VipList from './Staff/VipList';
 
 
 function App() {
@@ -40,7 +39,7 @@ function App() {
           
             {/* home */}
             <Route path="home" element={<>
-              <Container Fluid>
+              <Container >
               <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">WELCOME</h3></Box>
               <Box > </Box>
               </Container>
@@ -49,16 +48,25 @@ function App() {
             <Route path="information" element={<> <Header/><Informationpage/> </>} />
             <Route path="account" element={<><Header/><Accountpage/> </>} />
             <Route path="login">
-              <Route path="" element={<><Header/><Loginpage /></>} />
-              <Route path="signup" element={<><Header/><Signuppage /> </>} />
-              <Route path="signup2" element={<><Header/><Signuppage2 /> </>} />
+              <Route path="" element={<><Container >
+              <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">CUSTOMER-WELCOME</h3></Box>
+              <Box > </Box>
+              </Container><Loginpage /></>} />
+              <Route path="signup" element={<><Container >
+              <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">CUSTOMER-WELCOME</h3></Box>
+              <Box > </Box>
+              </Container><Signuppage /> </>} />
+              <Route path="signup2" element={<><Container >
+              <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">CUSTOMER-WELCOME</h3></Box>
+              <Box > </Box>
+              </Container><Signuppage2 /> </>} />
 
             </Route>
             <Route path="menupage" element={<><Header/><Menupage/> </>} />
             <Route path="shoppingbag" element={<><Header/><ShoppingBagPage /> </>} />
             {/* staff */}
             <Route path="stafflogin" element={<><header>
-              <Container Fluid>
+              <Container >
               <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="customerheader">STAFF</h3></Box>
               <Box > </Box>
               </Container>
@@ -66,7 +74,7 @@ function App() {
             <Route path="noworder" element={<><StaffHeader/><NowOrder /> </>} />
             <Route path="inventory" element={<><StaffHeader/><Inventory /> </>}/>
                     {/* <Route path="noworder" element={<NowOrder />} /> */}
-            <Route path="viplist" element={<><StaffHeader/><VipList /> </>} />
+            <Route path="viplist" element={<><StaffHeader/> <VipList/></>} />
             
         </Routes>
       </Router>

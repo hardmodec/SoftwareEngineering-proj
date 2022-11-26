@@ -15,6 +15,46 @@ import Header from '../../Component/Header';
 import Colortheme1 from '../../Component/Colortheme1'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+
+
+
+// function textInput() {
+//   var getTitle = document.getElementById("title").value;
+//   var getContent = document.getElementById("content").value;
+//   axios.post("http://127.0.0.1:8000/auth/login/", {
+//     title: getTitle,
+//     content: getContent,
+//   })
+//     .then(function (response) {
+//       console.log(response);
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+//   // <Link to="/notice"></Link>
+// }
+
+// const onClickLogin = () => {
+//   axios.post("http://127.0.0.1:8000/auth/login/"
+//   ,{
+//       classnetid : inputId,
+//       classnetpw : inputPw
+//   }
+//   )
+//   .then(res => {
+//       console.log(res.data)
+//       localStorage.clear()
+//       localStorage.setItem('id', res.data.id)
+//       localStorage.setItem('token', res.data.token)
+//       window.location.replace('http://localhost:3000/home')
+//   })
+//   .catch((err) => {
+//       console.log(err)
+//       setErrorMessage(false)
+//   })
+// }
 
 
 
@@ -39,15 +79,37 @@ function Copyright(props) {
 const theme = createTheme();
 
 function Loginpage() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
   const navigate = useNavigate();
+  const [values, setValues] = useState({ email: "",password : ""  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues({ ...values, [name]: value });
+  };
+  const handleClick = () => {
+    axios.post('http://35.216.103.95:3000/auth/login/', "help")
+    .then((res)=>{
+      alert("true")
+      console.log(res.data)
+      localStorage.clear()
+      localStorage.setItem('id', res.data.id)
+      localStorage.setItem('token', res.data.token)
+      navigate('menupage')
+    })
+    .catch((Error)=>{
+      alert("false")
+      console.log("로그인 실패 + \n" + Error)
+    })
+  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
 
   return (
@@ -74,7 +136,6 @@ function Loginpage() {
           </Typography>
           <Box
             component="form"
-            onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
           >
@@ -87,6 +148,7 @@ function Loginpage() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={handleChange}
             />
             <TextField
               margin="normal"
@@ -97,6 +159,7 @@ function Loginpage() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={handleChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -109,7 +172,8 @@ function Loginpage() {
               variant="contained"
               color="secondary"
               sx={{ mt: 3, mb: 2 }}
-              onClick={() => navigate("/menupage")}
+              onClick={() => handleClick}
+              //로그인 버튼 로그아웃으로 바껴야함
             >
               Sign In
             </Button>

@@ -24,12 +24,12 @@ export default function Detailmenu({dinnerid, menuid}) {
                     id: menuid,
                   }}
                 >
-                  <option onClick={AddMenu1(menuid, 0)} id={menuid} value={0}>0</option>
-                  <option onClick={AddMenu1(menuid, 1)} id={menuid} value={1}>1</option>
-                  <option onClick={AddMenu1(menuid, 2)} id={menuid} value={2}>2</option>
-                  <option onClick={AddMenu1(menuid, 3)} id={menuid} value={3}>3</option>
-                  <option onClick={AddMenu1(menuid, 4)} id={menuid} value={4}>4</option>
-                  <option onClick={AddMenu1(menuid, 5)} id={menuid} value={5}>5</option>
+                  <option onClick={() => AddMenu1(menuid, 0)} id={menuid} value={0}>0</option>
+                  <option onClick={() => AddMenu1(menuid, 1)} id={menuid} value={1}>1</option>
+                  <option onClick={() => AddMenu1(menuid, 2)} id={menuid} value={2}>2</option>
+                  <option onClick={() => AddMenu1(menuid, 3)} id={menuid} value={3}>3</option>
+                  <option onClick={() => AddMenu1(menuid, 4)} id={menuid} value={4}>4</option>
+                  <option onClick={() => AddMenu1(menuid, 5)} id={menuid} value={5}>5</option>
         
                 </NativeSelect>
               </FormControl>
@@ -50,12 +50,12 @@ export default function Detailmenu({dinnerid, menuid}) {
                     id: menuid,
                   }}
                 >
-                  <option onClick={AddMenu2(menuid, 0)} id={menuid} value={0}>0</option>
-                  <option onClick={AddMenu2(menuid, 1)} id={menuid} value={1}>1</option>
-                  <option onClick={AddMenu2(menuid, 2)} id={menuid} value={2}>2</option>
-                  <option onClick={AddMenu2(menuid, 3)} id={menuid} value={3}>3</option>
-                  <option onClick={AddMenu2(menuid, 4)} id={menuid} value={4}>4</option>
-                  <option onClick={AddMenu2(menuid, 5)} id={menuid} value={5}>5</option>
+                  <option onClick={() => AddMenu2(menuid, 0)} id={menuid} value={0}>0</option>
+                  <option onClick={() => AddMenu2(menuid, 1)} id={menuid} value={1}>1</option>
+                  <option onClick={() => AddMenu2(menuid, 2)} id={menuid} value={2}>2</option>
+                  <option onClick={() => AddMenu2(menuid, 3)} id={menuid} value={3}>3</option>
+                  <option onClick={() => AddMenu2(menuid, 4)} id={menuid} value={4}>4</option>
+                  <option onClick={() => AddMenu2(menuid, 5)} id={menuid} value={5}>5</option>
         
                 </NativeSelect>
               </FormControl>
@@ -76,12 +76,12 @@ export default function Detailmenu({dinnerid, menuid}) {
                     id: menuid,
                   }}
                 >
-                  <option onClick={AddMenu3(menuid, 0)} id={menuid} value={0}>0</option>
-                  <option onClick={AddMenu3(menuid, 1)} id={menuid} value={1}>1</option>
-                  <option onClick={AddMenu3(menuid, 2)} id={menuid} value={2}>2</option>
-                  <option onClick={AddMenu3(menuid, 3)} id={menuid} value={3}>3</option>
-                  <option onClick={AddMenu3(menuid, 4)} id={menuid} value={4}>4</option>
-                  <option onClick={AddMenu3(menuid, 5)} id={menuid} value={5}>5</option>
+                  <option onClick={() => AddMenu3(menuid, 0)} id={menuid} value={0}>0</option>
+                  <option onClick={() => AddMenu3(menuid, 1)} id={menuid} value={1}>1</option>
+                  <option onClick={() => AddMenu3(menuid, 2)} id={menuid} value={2}>2</option>
+                  <option onClick={() => AddMenu3(menuid, 3)} id={menuid} value={3}>3</option>
+                  <option onClick={() => AddMenu3(menuid, 4)} id={menuid} value={4}>4</option>
+                  <option onClick={() => AddMenu3(menuid, 5)} id={menuid} value={5}>5</option>
         
                 </NativeSelect>
               </FormControl>
@@ -102,12 +102,12 @@ export default function Detailmenu({dinnerid, menuid}) {
                     id: menuid,
                   }}
                 >
-                  <option onClick={AddMenu4(menuid, 0)} id={menuid} value={0}>0</option>
-                  <option onClick={AddMenu4(menuid, 1)} id={menuid} value={1}>1</option>
-                  <option onClick={AddMenu4(menuid, 2)} id={menuid} value={2}>2</option>
-                  <option onClick={AddMenu4(menuid, 3)} id={menuid} value={3}>3</option>
-                  <option onClick={AddMenu4(menuid, 4)} id={menuid} value={4}>4</option>
-                  <option onClick={AddMenu4(menuid, 5)} id={menuid} value={5}>5</option>
+                  <option onClick={() => AddMenu4(menuid, 0)} id={menuid} value={0}>0</option>
+                  <option onClick={() => AddMenu4(menuid, 1)} id={menuid} value={1}>1</option>
+                  <option onClick={() => AddMenu4(menuid, 2)} id={menuid} value={2}>2</option>
+                  <option onClick={() => AddMenu4(menuid, 3)} id={menuid} value={3}>3</option>
+                  <option onClick={() => AddMenu4(menuid, 4)} id={menuid} value={4}>4</option>
+                  <option onClick={() => AddMenu4(menuid, 5)} id={menuid} value={5}>5</option>
         
                 </NativeSelect>
               </FormControl>

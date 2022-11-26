@@ -14,8 +14,11 @@ import { useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import "./CenteredTabs.css"
 import {useState} from 'react'
+import CartContext from "../Context/CartContext"
 
 function CenteredTabs() {
+    const Cart = React.useContext(CartContext)
+    const {AddMenu} = Cart
     const [value, setValue] = React.useState(0);
     const navigate = useNavigate();
     const [login, setLogin] = useState(true);

@@ -40,7 +40,7 @@ const CartProvider = ({children}) => {
     const AddMenu1 = (menuid, amount) => {
         for (let i = 0; i < 2; i++) {
             if (menu1Cart1 && menu1Cart1.menulist[i].menuid === menuid) {
-                setMenu1Cart1(menu1Cart1.menulist[i].amount= amount)
+                setMenu1Cart1(menu1Cart1.menulist[i].amount *= amount)
             }
         }
     }
@@ -50,7 +50,7 @@ const CartProvider = ({children}) => {
     const AddMenu2 = (menuid, amount) => {
         for (let i = 0; i < 4; i++) {
             if (menu2Cart1 && menu2Cart1.menulist[i].menuid === menuid) {
-                setMenu2Cart1(menu2Cart1.menulist[i].amount= amount)
+                setMenu2Cart1(menu2Cart1.menulist[i].amount *= amount)
             }
         }
     }
@@ -60,7 +60,7 @@ const CartProvider = ({children}) => {
     const AddMenu3 = (menuid, amount) => {
         for (let i = 0; i < 4; i++) {
             if (menu3Cart1 && menu3Cart1.menulist[i].menuid === menuid) {
-                setMenu3Cart1(menu3Cart1.menulist[i].amount= amount)
+                setMenu3Cart1(menu3Cart1.menulist[i].amount *= amount)
             }
         }
     }
@@ -78,7 +78,7 @@ const CartProvider = ({children}) => {
         for (let i = 0; i < 5; i++) {
             if (menu4Cart1 && menu4Cart1.menulist[i].menuid === menuid) {
             }
-        setMenu4Cart1(menu4Cart1.menulist[i].amount= amount)
+        setMenu4Cart1(menu4Cart1.menulist[i].amount *= amount)
         }
     }
     // const menuList = dinnerCart.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.dinnerid}, {menu.menulist[0].menuid}<button className="btn1"></button></div>));
@@ -91,6 +91,7 @@ const CartProvider = ({children}) => {
     }
     const AddDinner3 = () => {
         setDinnerCart([...dinnerCart, ...menu3Cart1])
+        console.log(dinnerCart)
     }
     const AddDinner4 = () => {
         setDinnerCart([...dinnerCart, ...menu4Cart1])
