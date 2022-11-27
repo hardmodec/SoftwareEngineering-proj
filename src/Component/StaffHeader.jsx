@@ -9,7 +9,7 @@ import "./CenteredTabs.css"
 function StaffHeader() {
     return (
       <header>
-        <Container Fluid>
+        <Container>
         <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1><h2 className="customerheader">STAFF</h2></Box>
         <Box >
         <StaffTabs></StaffTabs>

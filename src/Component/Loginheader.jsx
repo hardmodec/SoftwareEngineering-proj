@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import React, { Component } from 'react'
 import CenteredTabs from '../Component/CenteredTabs'
 import Box from '@mui/material/Box';
@@ -6,18 +7,24 @@ import Colortheme1 from '../Component/Colortheme1'
 import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
 import { Container } from '@mui/system';
 import "./CenteredTabs.css"
+import {logout} from './CenteredTabs'
 
-function Header() {
+
+function LoginHeader() {
+    const navigate = useNavigate();
+
     return (
-      <header>
+      
         <Container>
-        <Box align="center" sx={{ p: 3, border: 'hidden' }} ><h1 className="customerheader">Mr. Fortune</h1> <h3 className="tabheader">CUSTOMER - {localStorage.getItem("userid")}님 환영합니다.</h3></Box>
+        <Box align="center" sx={{ p: 3, border: 'hidden' }} ><button className="headerbtn" onClick={logout}><h1 className="customerheader">Mr. Fortune</h1></button> <h3 className="customerheader">CUSTOMER</h3></Box>
         <Box >
-        <CenteredTabs></CenteredTabs>
         </Box>
         </Container>
-      </header>
+      
     );
 }
 
-export default Header
+export default LoginHeader
+
+
+

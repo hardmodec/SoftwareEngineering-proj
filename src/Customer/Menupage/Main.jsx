@@ -12,14 +12,14 @@ import Paper from '@mui/material/Paper';
 import ButtonBase from '@mui/material/ButtonBase';
 import Colortheme1 from '../../Component/Colortheme1';
 import { purple } from '@mui/material/colors';
-import ControlledOpenSelect from '../../Component/Select';
+import {ControlledOpenSelect1, ControlledOpenSelect2, ControlledOpenSelect3, ControlledOpenSelect4} from '../../Component/Select';
 import {dinner, menustyle, basicmenu} from "../../Component/item"
 import {useState} from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 import CartContext, {CartProvider, CartConsumer} from '../../Context/CartContext'
-import Detailmenu from '../../Component/Detailbutton'
+import {Detailmenu1, Detailmenu2, Detailmenu3, Detailmenu4, Detailmenu41, Detailmenu42, Detailmenu43, } from '../../Component/Detailbutton'
 import "./menu.css"
 import {useContext} from "react"
 
@@ -36,7 +36,7 @@ import {useContext} from "react"
 function Menupage() {
   const Cart = React.useContext(CartContext)
   const {menu1Cart1, menu2Cart1, menu3Cart1, menu4Cart1, dinnerCart,
-        AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner1, AddDinner2, AddDinner3, AddDinner4} = Cart
+        AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner1, AddDinner2, AddDinner3, AddDinner4, ResetCart} = Cart
   return (
     <Container>
     <Container fixed>
@@ -47,16 +47,16 @@ function Menupage() {
           <div className="menu1">
             <h3>발렌타인 디너(Valentine dinner)</h3>
             <ul>
-              <li>와인 1잔 <Detailmenu dinnerid={1} menuid={2}/> </li>
-              <li>스테이크 <Detailmenu dinnerid={1} menuid={1}/> </li>
+              <li>와인 1잔 <Detailmenu1 menuid={2}/> </li>
+              <li>스테이크 <Detailmenu1 menuid={1}/> </li>
             </ul>
             
 
-            <ControlledOpenSelect dinnerid={1}/> 
+            <ControlledOpenSelect1/> 
 
             <h3>기본가격: ₩ {dinner[0].price} / ₩ {dinner[0].price+2000} / ₩ {dinner[0].price+5000}</h3>
             
-            <ColorButton variant="contained" onClick={() => AddDinner1()}>장바구니에 추가</ColorButton> 
+            <ColorButton variant="contained" onClick={() => AddDinner1()}>장바구니에 추가 </ColorButton> 
             </div>
           </Item>
         </Grid>
@@ -67,12 +67,12 @@ function Menupage() {
 
             <h3>프렌치 디너(French dinner)</h3>
               <ul>
-                <li>커피 1잔 <Detailmenu dinnerid={2} menuid={3}/> </li>
-                <li>와인 1잔 <Detailmenu dinnerid={2} menuid={2}/> </li>
-                <li>샐러드   <Detailmenu dinnerid={2} menuid={5}/> </li>
-                <li>스테이크 <Detailmenu dinnerid={2} menuid={1}/> </li>
+                <li>커피 1잔 <Detailmenu2 menuid={3}/> </li>
+                <li>와인 1잔 <Detailmenu2 menuid={2}/> </li>
+                <li>샐러드   <Detailmenu2 menuid={5}/> </li>
+                <li>스테이크 <Detailmenu2 menuid={1}/> </li>
               </ul>
-              <ControlledOpenSelect></ControlledOpenSelect>
+              <ControlledOpenSelect2/>
 
             <h3>기본가격: ₩ {dinner[1].price} / ₩ {dinner[1].price+2000} / ₩ {dinner[1].price+5000}</h3>
             <ColorButton variant="contained" onClick={() => AddDinner2()}>장바구니에 추가</ColorButton> 
@@ -88,12 +88,12 @@ function Menupage() {
 
             <h3>잉글리시 디너(English dinner)</h3>
                 <ul>
-                  <li>에그 스크램블 <Detailmenu dinnerid={3} menuid={6}/> </li>
-                  <li>베이컨       <Detailmenu  dinnerid={3} menuid={7}/> </li>
-                  <li>빵           <Detailmenu  dinnerid={3} menuid={8}/> </li>
-                  <li>스테이크     <Detailmenu dinnerid={3} menuid={1}/> </li>
+                  <li>에그 스크램블 <Detailmenu3 menuid={6}/> </li>
+                  <li>베이컨       <Detailmenu3 menuid={7}/> </li>
+                  <li>빵           <Detailmenu3 menuid={8}/> </li>
+                  <li>스테이크     <Detailmenu3 menuid={1}/> </li>
                 </ul>
-                <ControlledOpenSelect></ControlledOpenSelect>
+                <ControlledOpenSelect3/>
 
             <h3>기본가격: ₩ {dinner[2].price} / ₩ {dinner[2].price+2000} / ₩ {dinner[2].price+5000}</h3>
             <ColorButton variant="contained" onClick={() => AddDinner3()}>장바구니에 추가</ColorButton> 
@@ -109,14 +109,14 @@ function Menupage() {
 
             <h3>샴페인 축제 디너(Champagne Feast dinner)</h3>
                 <ul>
-                  <li>샴페인 1병      <Detailmenu dinnerid={4} menuid={4}/> </li>
-                  <li>바게트빵 4조각  <Detailmenu dinnerid={4} menuid={9}/></li>
-                  <li>커피 1포트     <Detailmenu dinnerid={4} menuid={3}/> </li>
-                  <li>와인 1잔       <Detailmenu dinnerid={4} menuid={2}/> </li>
-                  <li>스테이크       <Detailmenu dinnerid={4} menuid={1}/> </li>
+                  <li>샴페인 1병      <Detailmenu41 menuid={4}/> </li>
+                  <li>바게트빵 4조각  <Detailmenu42 menuid={9}/></li>
+                  <li>커피 1포트     <Detailmenu43 menuid={3}/> </li>
+                  <li>와인 1잔       <Detailmenu4 menuid={2}/> </li>
+                  <li>스테이크       <Detailmenu4 menuid={1}/> </li>
                 </ul>
-                <ControlledOpenSelect></ControlledOpenSelect>
-            <h3>₩ {dinner[3].price} / ₩ {dinner[3].price+2000} / ₩ {dinner[3].price+5000}</h3>
+                <ControlledOpenSelect4/>
+            <h3>기본 가격: ₩ {dinner[3].price+2000} / ₩ {dinner[3].price+5000}</h3>
             <h3>* 2인 식사 기준 *</h3>
             
             <ColorButton variant="contained" onClick={() => AddDinner4()}>장바구니에 추가</ColorButton> 

@@ -9,12 +9,25 @@
 .customerheader2{
     font-family:"naver1";
     /* font-size: 20px; */
-   }
+}
 
 .tabheader{
     font-family:"naver1";
 }
+
+.headerbtn{
+    background: transparent;
+    border: none !important;
+    background-color: rgba(255,255,255,0);
+    font-family:"naver1";
+    margin: 0px;
+}
+
+
+
+
 @font-face{
     font-family:"naver1";
     src: url("../font/NaverNanumSquareNeo/TTF/NanumSquareNeo-cBd.ttf")
 }
+

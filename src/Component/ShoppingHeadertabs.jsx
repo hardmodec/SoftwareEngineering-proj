@@ -15,10 +15,12 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import "./CenteredTabs.css"
 import {useState} from 'react'
 import CartContext from "../Context/CartContext"
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function CenteredTabs() {
+function ShoppingHeaderTabs() {
     const Cart = React.useContext(CartContext)
-    const {AddMenu} = Cart
+    const {menu1Cart1, menu2Cart1, menu3Cart1, menu4Cart1, dinnerCart,
+        AddMenu1, AddMenu2, AddMenu3, AddMenu4, AddDinner1, AddDinner2, AddDinner3, AddDinner4, ResetCart} = Cart    
     const [value, setValue] = React.useState(0);
     const navigate = useNavigate();
     const [login, setLogin] = useState(true);
@@ -29,6 +31,7 @@ function CenteredTabs() {
     const handleLoginicon = () => {
       setLogin(!login);
     };
+    
     
     // const [{ cart, user }, dispatch] = useStateValue();
     return (
@@ -62,12 +65,12 @@ function CenteredTabs() {
             label="장바구니"
             sx={{ mt: 5, mr: 3, ml: 5 }}
           />
-          {/* <Tab 
-            icon={<ShoppingCartIcon />}
-            onClick={() => navigate("/myorderlist")}
-            label="장바구니"
+          <Tab 
+            icon={<DeleteIcon />}
+            onClick={ResetCart}
+            label="전체 메뉴 삭제"
             sx={{ mt: 5, mr: 3, ml: 5 }}
-          /> */}
+          />
         </Tabs>
         </ThemeProvider>
       </Box>
@@ -79,7 +82,6 @@ const logout = () => {
   localStorage.clear()
   window.location.replace('http://localhost:3000/')
 };
-
-
 export {logout}
-export default CenteredTabs
+export default ShoppingHeaderTabs
+  

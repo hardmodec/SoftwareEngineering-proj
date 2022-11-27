@@ -35,6 +35,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 function Signuppage() {
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
