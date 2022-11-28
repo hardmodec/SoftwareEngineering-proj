@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-export default function displayInventory() {
+export default function Inventory() {
   const [text, setText] = useState([]);
       axios.get("http://35.216.103.95:3000/MrDae/inventories/")
         .then((response) => {
@@ -19,7 +19,7 @@ export default function displayInventory() {
       
         const invenlist = text.map((e) => (
           <div className="email">menuid: {e.id}, menuname: {e.name}, amount:{e.count}</div>
-      ))
+        ))
       // const menuList = dinnerCart.map((menu, index) => (<div className="shoppinglist" key={index}>{menu.dinnerid}, {menu.menulist[0].menuid}<button className="btn1"></button></div>));
     return(
       <section>

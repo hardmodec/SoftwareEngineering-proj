@@ -19,7 +19,7 @@ function LoginHeader() {
         <Box align="center" sx={{ p: 3, border: 'hidden' }} ><button className="headerbtn" onClick={logout}><h1 className="customerheader">Mr. Fortune</h1></button> <h3 className="customerheader">CUSTOMER</h3></Box>
         <Box >
         </Box>
-        </Container>
+        </Container>    
       
     );
 }

@@ -4,7 +4,7 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 //const APIserver = "http://happy-jackpot-day.com:8000";
-const APIserver = "http://localhost:8000";
+const APIserver = "http://35.216.103.95:3000";
 
 const axiosAPI = axios.create({
     baseURL: APIserver,

@@ -86,7 +86,7 @@ function Copyright(props) {
                     label="address"
                     type="address"
                     id="address"
-                    autoComplete="new-password"
+                    autoComplete="new-address"
                   />
                 </Grid>
                 <Grid item xs={12}>

@@ -56,7 +56,7 @@ function ShoppingBagPage(){
           navigate('/menupage')
         })
         .catch((Error)=>{
-          alert("오류가 발생했습니다. 다시 주문해주세요")
+          alert("감사합니다. 또 주문해주세요..")
           console.log(values)
         })
       };

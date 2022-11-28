@@ -212,7 +212,8 @@ function Detailmenu4({menuid}) {
                   <option onClick={() => AddMenu4(menuid, 3)} id={menuid} value={3}>3</option>
                   <option onClick={() => AddMenu4(menuid, 4)} id={menuid} value={4}>4</option>
                   <option onClick={() => AddMenu4(menuid, 5)} id={menuid} value={5}>5</option>
-        
+                  <option onChange={() => AddMenu4(menuid, 1)} id={menuid} value={1}>선택완료</option>
+
                 </NativeSelect>
               </FormControl>
             </Box>
@@ -253,7 +254,8 @@ function Detailmenu4({menuid}) {
                     <option onClick={() => AddMenu4(menuid, 3)} id={menuid} value={3}>3</option>
                     <option onClick={() => AddMenu4(menuid, 4)} id={menuid} value={4}>4</option>
                     <option onClick={() => AddMenu4(menuid, 5)} id={menuid} value={5}>5</option>
-          
+                    <option onChange={() => AddMenu4(menuid, 1)} id={menuid} value={1}>선택완료</option>
+
                   </NativeSelect>
                 </FormControl>
               </Box>
@@ -292,7 +294,8 @@ function Detailmenu4({menuid}) {
                       <option onClick={() => AddMenu4(menuid, 3)} id={menuid} value={3}>3</option>
                       <option onClick={() => AddMenu4(menuid, 4)} id={menuid} value={4}>4</option>
                       <option onClick={() => AddMenu4(menuid, 5)} id={menuid} value={5}>5</option>
-            
+                      <option onChange={() => AddMenu4(menuid, 1)} id={menuid} value={1}>선택완료</option>
+
                     </NativeSelect>
                   </FormControl>
                 </Box>
